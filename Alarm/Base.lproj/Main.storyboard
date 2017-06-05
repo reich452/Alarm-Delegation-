@@ -174,6 +174,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
+                                                        <action selector="disableButtonTapped:" destination="7NB-ZN-8QJ" eventType="touchUpInside" id="N4x-JN-flh"/>
                                                         <action selector="enableButtonTapped:" destination="7NB-ZN-8QJ" eventType="touchUpInside" id="Yha-hQ-Fo8"/>
                                                     </connections>
                                                 </button>
@@ -197,14 +198,17 @@
                     <navigationItem key="navigationItem" title="New Alarm" id="Xli-Z0-nzC">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="l3S-1B-rzE">
                             <connections>
-                                <action selector="saveButtonTapped:" destination="7NB-ZN-8QJ" id="iPF-r9-oEd"/>
+                                <action selector="saveButtonTapped:" destination="7NB-ZN-8QJ" id="W9S-ZM-x3t"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="alarmDatePicker" destination="tYb-iX-i9E" id="x2S-bT-qGG"/>
                         <outlet property="alarmTitleTextField" destination="sKL-kV-HdA" id="lZX-Mx-akf"/>
-                        <outlet property="enableButton" destination="Q9u-u1-fcd" id="sco-wp-TRH"/>
+                        <outlet property="datePicker" destination="tYb-iX-i9E" id="n6e-ae-vyP"/>
+                        <outlet property="disableButton" destination="Q9u-u1-fcd" id="x8b-3Y-txV"/>
+                        <outlet property="enableButton" destination="Q9u-u1-fcd" id="X4Z-Cr-44C"/>
+                        <outlet property="titleTextField" destination="sKL-kV-HdA" id="lEE-lK-zLD"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nhS-Xs-SUr" userLabel="First Responder" sceneMemberID="firstResponder"/>
