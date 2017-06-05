@@ -50,5 +50,10 @@ class Alarm {
         self.enabled = enabled
         self.uuid = uuid
     }
-    
+}
+
+// MARK: - Equatable 
+
+func ==(lsh: Alarm, rhs: Alarm) -> Bool {
+    return lsh === rhs
 }
