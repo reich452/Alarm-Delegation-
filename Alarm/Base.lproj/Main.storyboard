@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="100" id="jdw-7s-g8d" customClass="SwitchTableViewCell" customModule="Alarm" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="100" id="jdw-7s-g8d" customClass="SwitchTableViewCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jdw-7s-g8d" id="Znj-98-D1q">
@@ -53,7 +53,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m2m-j2-l4x">
                                                     <rect key="frame" x="310" y="26.5" width="51" height="31"/>
                                                     <connections>
-                                                        <action selector="switchValueChanged:" destination="jdw-7s-g8d" eventType="valueChanged" id="30x-T6-ojp"/>
+                                                        <action selector="switchValueChanged:" destination="jdw-7s-g8d" eventType="valueChanged" id="aFD-Lv-Msd"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -67,9 +67,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="alarmSwitch" destination="m2m-j2-l4x" id="rkd-cj-RmR"/>
-                                    <outlet property="nameLabel" destination="2ge-jy-HAs" id="mpw-gH-FEp"/>
+                                    <outlet property="alarmSwitch" destination="m2m-j2-l4x" id="hRb-2H-Fh1"/>
+                                    <outlet property="nameLabel" destination="2ge-jy-HAs" id="nWx-3b-Bc3"/>
                                     <outlet property="timeLabel" destination="LEh-Qn-5Pt" id="H5D-Us-rTo"/>
+                                    <outlet property="timeLable" destination="LEh-Qn-5Pt" id="H45-TA-0mn"/>
                                     <segue destination="7NB-ZN-8QJ" kind="show" identifier="toAlarmDetail" id="bSS-7k-x1K"/>
                                 </connections>
                             </tableViewCell>
