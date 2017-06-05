@@ -14,11 +14,15 @@ class SwitchTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var alarmSwitch: UISwitch!
     
+    // MARK: - Properties
+    
     var alarm: Alarm? {
         didSet {
             updateViews()
         }
     }
+    
+    weak var delegate: SwitchTableViewCellDelegate?
     
     func updateViews() {
         guard let alarm = alarm else { return }
@@ -30,8 +34,11 @@ class SwitchTableViewCell: UITableViewCell {
     // MARK: - Actions 
     
     @IBAction func switchValueChanged(_ sender: Any) {
-        
+        delegate?.switchCellSwitchValueChanged(cell: self)
     }
     
+}
 
+protocol SwitchTableViewCellDelegate: class {
+    func switchCellSwitchValueChanged(cell: SwitchTableViewCell)
 }

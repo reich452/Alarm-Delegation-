@@ -16,6 +16,7 @@ class AlarmController {
     
     var alarms: [Alarm] = []
     
+    
     // MARK: - CRUD
     
     func addAlarm(fireTimeFromMidnight: TimeInterval, name: String) -> Alarm {
