@@ -71,7 +71,7 @@
                                     <outlet property="nameLabel" destination="2ge-jy-HAs" id="nWx-3b-Bc3"/>
                                     <outlet property="timeLabel" destination="LEh-Qn-5Pt" id="H5D-Us-rTo"/>
                                     <outlet property="timeLable" destination="LEh-Qn-5Pt" id="H45-TA-0mn"/>
-                                    <segue destination="7NB-ZN-8QJ" kind="show" identifier="toAlarmDetail" id="bSS-7k-x1K"/>
+                                    <segue destination="7NB-ZN-8QJ" kind="show" identifier="toNewAlarm" id="bSS-7k-x1K"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -83,7 +83,7 @@
                     <navigationItem key="navigationItem" title="Alarm" id="eW9-w3-3Te">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uli-Xc-XUw">
                             <connections>
-                                <segue destination="7NB-ZN-8QJ" kind="show" identifier="toNewAlarm" id="RNX-Or-piM"/>
+                                <segue destination="7NB-ZN-8QJ" kind="show" identifier="toAlarmDetail" id="RNX-Or-piM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -103,7 +103,7 @@
                         <sections>
                             <tableViewSection id="3DL-Y5-nzw">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="192" id="CFf-hZ-uI4">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailCell" rowHeight="192" id="CFf-hZ-uI4">
                                         <rect key="frame" x="0.0" y="35" width="375" height="192"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CFf-hZ-uI4" id="HjF-Hg-lTh">
@@ -174,7 +174,6 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="disableButtonTapped:" destination="7NB-ZN-8QJ" eventType="touchUpInside" id="N4x-JN-flh"/>
                                                         <action selector="enableButtonTapped:" destination="7NB-ZN-8QJ" eventType="touchUpInside" id="Yha-hQ-Fo8"/>
                                                     </connections>
                                                 </button>
@@ -203,10 +202,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="alarmDatePicker" destination="tYb-iX-i9E" id="x2S-bT-qGG"/>
-                        <outlet property="alarmTitleTextField" destination="sKL-kV-HdA" id="lZX-Mx-akf"/>
                         <outlet property="datePicker" destination="tYb-iX-i9E" id="n6e-ae-vyP"/>
-                        <outlet property="disableButton" destination="Q9u-u1-fcd" id="x8b-3Y-txV"/>
                         <outlet property="enableButton" destination="Q9u-u1-fcd" id="X4Z-Cr-44C"/>
                         <outlet property="titleTextField" destination="sKL-kV-HdA" id="lEE-lK-zLD"/>
                     </connections>

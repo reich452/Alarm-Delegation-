@@ -55,7 +55,12 @@ class AlarmDetailTableViewController: UITableViewController {
     // MARK: - Actions
     
     @IBAction func enableButtonTapped(_ sender: Any) {
-        
+        guard let alarm = alarm else { return }
+        AlarmController.shared.toggleEnabled(for: alarm)
+        if alarm.enabled {
+        }
+     
+        updateViews()
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -73,22 +78,6 @@ class AlarmDetailTableViewController: UITableViewController {
             self.alarm = alarm
         }
         _ = navigationController?.popViewController(animated: true)
-    }
-    
-    // MARK: - Table view data source
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return 3
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath)
-        
-        
-        
-        return cell
     }
     
 }
