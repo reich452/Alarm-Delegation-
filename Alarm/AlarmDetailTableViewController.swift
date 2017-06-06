@@ -59,7 +59,20 @@ class AlarmDetailTableViewController: UITableViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        
+        tappedSaveButton()
+    }
+    
+    func tappedSaveButton() {
+        guard let title = titleTextField.text,
+            let thisMorningAtMidNight = DateHelper.thisMorningAtMidnight else { return }
+        let timeIntervalSinceMidnight = datePicker.date.timeIntervalSince(thisMorningAtMidNight)
+        if let alarm = alarm {
+            AlarmController.shared.updateAlarm(alarm: alarm, fireTimeFromMidnight: timeIntervalSinceMidnight, name: title)
+        } else {
+            let alarm = AlarmController.shared.addAlarm(fireTimeFromMidnight: timeIntervalSinceMidnight, name: title)
+            self.alarm = alarm
+        }
+        _ = navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Table view data source
@@ -71,22 +84,11 @@ class AlarmDetailTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath)
+        
         
         
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        
-        return true
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
     }
     
 }

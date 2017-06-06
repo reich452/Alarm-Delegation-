@@ -10,9 +10,9 @@ import UIKit
 
 class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDelegate {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
+         super.viewWillAppear(animated)
+         tableView.reloadData()
     }
     
     // MARK: - Custom Prodocol 
@@ -22,7 +22,6 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
         let alarm = AlarmController.shared.alarms[indexPath.row]
         AlarmController.shared.toggleEnabled(for: alarm)
         
-    
     }
     
 
@@ -58,7 +57,10 @@ class AlarmListTableViewController: UITableViewController, SwitchTableViewCellDe
 
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- 
+        if segue.identifier == "toAlarmDetail" {
+            guard let detailTVC = segue.destination as? AlarmDetailTableViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            detailTVC.alarm = AlarmController.shared.alarms[indexPath.row]
+        }
     }
 
 }
